@@ -2,7 +2,7 @@
 
 ![Text Sample](https://github.com/rogerdahl/font-to-c/blob/master/draw_text_sample.png)
 
-font2c is a small Python script that generates C code for TrueType, OpenType and other fonts supported by FreeType. The code can be compiled directly and linked into C programs to enable them to draw text without any external libraries. Example C code for using the generated code to draw text is also included. This is mainly intended for use in embedded systems.
+font2c is a small Python script that generates C code for TrueType, OpenType and other fonts supported by FreeType. The generated code can be compiled directly and linked into C programs to enable them to draw text without any external libraries. Example C code for using the generated code to draw text is included. This is mainly intended for use in embedded systems.
 
 There are many of these generators around, but I didn't find one that met my three requirements:
 
@@ -19,7 +19,7 @@ Prepare dependencies
     
 Get the path to a TTF font. If you don't know where they are, try:
 
-    $ locate --regex "\.ttf$" | less
+    $ locate "*.ttf" | less
 
 In `font2c.py`:
 
@@ -59,9 +59,7 @@ example for the character "*" in 30 pixels for the font Century Schoolbook L Bol
 0x00,0x00,0x00,0x00,0x00,0x1f,0x5e,0x0b,0x00,0x00,0x00,0x00,0x00, //      .-      
 ```
 
-Another table of offsets into this table and other font medata is also generated.
-
-These tables can then be used to draw text by looking up the characters and copying them to the display.
+Another table of offsets into this table and other font medata is also generated. These tables can then be used to draw text by looking up the characters and copying them to the display.
 
 The image at the top was generated with the following calls:
 
