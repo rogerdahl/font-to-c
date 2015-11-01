@@ -30,6 +30,18 @@ In `font2c.py`:
 Run `font2c.py`:
 
     $ ./font2c.py
+
+Then compile the C program that will use the generated C code:
+
+    $ gcc -std=c99 -o draw_text draw_text.c century_schoolbook_l_bold_30_font.c
+    
+Run the program:
+
+    $ ./draw_text
+    
+And view the resulting image with an image viewer that supports `.ppm` files. For instance, `feh`.
+    
+    $ feh ./draw_text_sample.ppm
     
 #### Example output
 
@@ -61,7 +73,7 @@ example for the character "*" in 30 pixels for the font Century Schoolbook L Bol
 
 Another table of offsets into this table and other font medata is also generated. These tables can then be used to draw text by looking up the characters and copying them to the display.
 
-The image at the top was generated with the following calls:
+The image at the top was generated with the following calls in the included `draw_text.c` sample app:
 
 ```c
 drawText(buf, 0, 0 * TALLEST_CHAR_PIXELS, "The quick brown fox jumps over the lazy dog");
