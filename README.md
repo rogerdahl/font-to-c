@@ -1,8 +1,8 @@
-### font2c
+### font2c.py
 
 ![Text Sample](https://github.com/rogerdahl/font-to-c/blob/master/draw_text_sample.png)
 
-font2c is a small Python script that generates C code for TrueType, OpenType and other fonts supported by FreeType. The generated code can be compiled directly and linked into C programs to enable them to draw text without any external libraries. Example C code for using the generated code to draw text is included. This is mainly intended for use in embedded systems.
+font2c.py is a small Python script that generates C code for TrueType, OpenType and other fonts supported by FreeType. The generated code can be compiled directly and linked into C programs to enable them to draw text without any external libraries. Example C code for using the generated code to draw text is included. This is mainly intended for use in embedded systems.
 
 There are many of these generators around, but I didn't find one that met my three requirements:
 
