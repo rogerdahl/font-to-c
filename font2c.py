@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 
-# sudo pip install freetype-py
-# I have tons of TrueType fonts floating around on my system:
-# $ locate --regex "\.ttf$" | less
-# View font: gnome-font-viewer Orbitron-bold.ttf
-
 import freetype
 import re
 import StringIO
