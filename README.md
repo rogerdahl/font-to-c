@@ -63,3 +63,11 @@ Another table of offsets into this table and other font medata is also generated
 
 These tables can then be used to draw text by looking up the characters and copying them to the display.
 
+The image at the top was generated with the following calls:
+
+```c
+drawText(buf, 0, 0 * TALLEST_CHAR_PIXELS, "The quick brown fox jumps over the lazy dog");
+drawCenteredText(buf, 1 * TALLEST_CHAR_PIXELS , "AWA\\\\\\///AAWWVVAAWWVWVWVW");
+drawRightAdjustedText(buf, 2 * TALLEST_CHAR_PIXELS, "Ava Awa Wka Via Vja");
+drawCenteredText(buf, 3 * TALLEST_CHAR_PIXELS, "1234567890 !@#$%^&*()-=_+~`';:?></.,");
+```
