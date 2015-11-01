@@ -15,8 +15,6 @@ FONT_FILE_PATH = '/usr/share/ghostscript/9.10/Resource/Font/CenturySchL-Bold' #
 FONT_PIXEL_SIZE = 30
 FIRST_CHAR = ' '
 LAST_CHAR = '~'
-#FIRST_CHAR = 'b'
-#LAST_CHAR = 'c'
 TAB_STR = ' ' * 4
 
 def main():

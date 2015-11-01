@@ -31,6 +31,11 @@ Run `font2c.py`:
     
 #### Example output
 
+Two files will be generated. For instance:
+
+    century_schoolbook_l_bold_30_font.h
+    century_schoolbook_l_bold_30_font.c
+
 A table of pixel values for each character in the range set by FIRST_CHAR and LAST_CHAR is generated. An
 example for the character "*" in 30 pixels for the font Century Schoolbook L Bold:
 
@@ -54,4 +59,5 @@ Another table of offsets into this table and other font medata is also generated
 
 These tables can then be used to draw text by looking up the characters and copying them to the display.
 
+![](https://github.com/rogerdahl/font-to-c/blob/master/draw_text_sample.png)
 
