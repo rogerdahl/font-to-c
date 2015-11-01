@@ -1,5 +1,7 @@
 ### font2c
 
+![Text Sample](https://github.com/rogerdahl/font-to-c/blob/master/draw_text_sample.png)
+
 font2c is a small Python script that generates C code for TrueType, OpenType and other fonts supported by FreeType. The code can be compiled directly and linked into C programs to enable them to draw text without any external libraries. Example C code for using the generated code to draw text is also included. This is mainly intended for use in embedded systems.
 
 There are many of these generators around, but I didn't find one that met my three requirements:
@@ -58,6 +60,4 @@ example for the character "*" in 30 pixels for the font Century Schoolbook L Bol
 Another table of offsets into this table and other font medata is also generated.
 
 These tables can then be used to draw text by looking up the characters and copying them to the display.
-
-![](https://github.com/rogerdahl/font-to-c/blob/master/draw_text_sample.png)
 
