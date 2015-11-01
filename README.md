@@ -2,13 +2,13 @@
 
 ![Text Sample](https://github.com/rogerdahl/font-to-c/blob/master/draw_text_sample.png)
 
-font2c.py is a small Python script that generates C code for TrueType, OpenType and other fonts supported by FreeType. The generated code can be compiled directly and linked into C programs to enable them to draw text without any external libraries. Example C code for using the generated code to draw text is included. This is mainly intended for use in embedded systems.
+font2c.py is a small Python script that generates C code for TrueType, OpenType and other fonts supported by FreeType. The generated code can be compiled and linked directly into C programs to enable text drawing without any external libraries. Example C code for using the generated code is included. This is mainly intended for use in embedded systems.
 
 There are many of these generators around, but I didn't find one that met my three requirements:
 
 - Run on Linux
 - Draw antialiased fonts
-- Preserve and use advance data to allow slanted characters to overlap (it's not complete kerning but helps a lot)
+- Preserve and use "advance" to allow slanted characters to overlap (it's not complete kerning but helps a lot)
 
 #### Usage
 
@@ -71,7 +71,7 @@ example for the character "*" in 30 pixels for the font Century Schoolbook L Bol
 0x00,0x00,0x00,0x00,0x00,0x1f,0x5e,0x0b,0x00,0x00,0x00,0x00,0x00, //      .-      
 ```
 
-Another table of offsets into this table and other font medata is also generated. These tables can then be used to draw text by looking up the characters and copying them to the display.
+Another table of offsets into this table and other font metadata is also generated. These tables can then be used to draw text by looking up the characters and copying them to the display.
 
 The image at the top was generated with the following calls in the included `draw_text.c` sample app:
 
@@ -81,3 +81,10 @@ drawCenteredText(buf, 1 * TALLEST_CHAR_PIXELS , "AWA\\\\\\///AAWWVVAAWWVWVWVW");
 drawRightAdjustedText(buf, 2 * TALLEST_CHAR_PIXELS, "Ava Awa Wka Via Vja");
 drawCenteredText(buf, 3 * TALLEST_CHAR_PIXELS, "1234567890 !@#$%^&*()-=_+~`';:?></.,");
 ```
+
+#### Todo:
+
+- The font pixel data can be stored using much less room at a small cost in performance and complexity of drawText().
+- Unicode.
+- Support monochrome fonts stored as bitmaps (would take 1/8 of the space but there would be no antialiasing).
+
